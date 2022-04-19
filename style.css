@@ -1,0 +1,194 @@
+:root {
+    --box_width: 400px;
+    --box_height: calc(var(--box_width) / 4);
+    --width_half: calc(var(--box_height) + var(--box_height));
+    --height_half: calc(var(--box_height) * 2);
+    --color_from: rgb(71, 78, 2);
+    --color_to: rgb(229, 255, 0);
+    --speed: 4s linear infinite;
+    --bg_color: #020202;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg_color);
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.cube {
+    position: relative;
+    width: var(--box_width);
+    height: var(--box_width);
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(150deg);
+    animation: animate var(--speed);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--box_width);
+    height: var(--box_width);
+    transform-style: preserve-3d;
+}
+
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--box_width);
+    height: var(--box_width);
+    transform-style: preserve-3d;
+}
+
+.cube .front_back span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--box_width));
+    height: var(--box_height);
+    background: linear-gradient(var(--color_from), var(--color_to));
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.01);
+    border-left: 1px solid rgba(255, 255, 255, 0.01);
+    transform: rotateY(calc(90deg * var(--i)))translateZ(calc(var(--width_half)));
+}
+
+.top {
+    position: absolute;
+    width: var(--box_width);
+    height: var(--box_width);
+    background-color: var(--color_from);
+    transform: rotateX(90deg) translateZ(var(--height_half));
+}
+
+.top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--box_width);
+    height: var(--box_width);
+    background-color: var(--color_to);
+    transform: translateZ(calc((var(--height_half)) * (-1)));
+    filter: blur(25px);
+    box-shadow: 0 0 var(--box_width) var(--color_to);
+}
+
+@media only screen and (min-width:1px) {
+     :root {
+        --box-width: 100px;
+        --box-height: 100px;
+        --box-half: 50px;
+        --shadow_distance: -225px;
+        --blured_value: 25px;
+    }
+}
+
+@media only screen and (min-width:280px) {
+     :root {
+        --box-width: 100px;
+        --box-height: 100px;
+        --box-half: 50px;
+        --shadow_distance: -225px;
+        --blured_value: 25px;
+    }
+}
+
+@media only screen and (min-width:360px) {
+     :root {
+        --box-width: 150px;
+        --box-height: 150px;
+        --box-half: 75px;
+        --shadow_distance: -225px;
+        --blured_value: 25px;
+    }
+}
+
+@media only screen and (min-width:820px) {
+     :root {
+        --box-width: 300px;
+        --box-height: 300px;
+        --box-half: 150px;
+        --shadow_distance: -450px;
+        --blured_value: 30px;
+    }
+}
+
+@media only screen and (min-width:912px) {
+     :root {
+        --box-width: 600px;
+        --box-height: 600px;
+        --box-half: 300px;
+        --shadow_distance: -900px;
+        --blured_value: 30px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+     :root {
+        --box-width: 300px;
+        --box-height: 300px;
+        --box-half: 150px;
+        --shadow_distance: -450px;
+        --blured_value: 30px;
+    }
+}
+
+@media only screen and (min-width:768px) and (min-height:600px) {
+     :root {
+        --box-width: 250px;
+        --box-height: 250px;
+        --box-half: 125px;
+        --shadow_distance: -375px;
+        --blured_value: 25px;
+    }
+}
+
+@media only screen and (min-width:1280px) and (min-height:800px) {
+     :root {
+        --box-width: 300px;
+        --box-height: 300px;
+        --box-half: 150px;
+        --shadow_distance: -450px;
+        --blured_value: 30px;
+    }
+}
+
+@media only screen and (min-width:1024px) and (min-height:600px) {
+     :root {
+        --box-width: 300px;
+        --box-height: 300px;
+        --box-half: 150px;
+        --shadow_distance: -450px;
+        --blured_value: 30px;
+    }
+}
