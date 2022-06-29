@@ -1,3 +1,3 @@
 # Rectangular_Ambilight
-Rectangular  Square Top
+Rectangular Prism
 https://elyric10-dev.github.io/Rectangular_Ambilight/
